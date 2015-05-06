@@ -5,6 +5,11 @@ A mimic inspired by the session feature in `Requests <https://github.com/kenneth
 
 **THIS IS SESSION ABOUT CLIENT, NOT SERVER!**
 
+Installation
+------------
+
+    pip install tornado-httpclient-session
+
 Usage
 -----
 

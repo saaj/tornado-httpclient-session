@@ -18,6 +18,9 @@ class Session(object):
     def __del__(self):
         self.close()
 
+    def __getattr__(self, name):
+        return getattr(self._httpclient, name)
+
     def close(self):
         if not self._closed:
             self._httpclient.close()

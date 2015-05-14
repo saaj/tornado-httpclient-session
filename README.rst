@@ -27,6 +27,11 @@ Usage
    r = s.fetch('https://github.com') # Fetching carrys cookies
    print r.request.headers['cookie'] # Inspect cookies attached
 
+Testing
+-------
+
+    python -m httpclient_session.test.runtests
+
 Development Progress
 --------------------
 

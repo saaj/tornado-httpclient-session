@@ -5,7 +5,7 @@ from tornado.ioloop import IOLoop
 from httpclient_session.test.application import app
 from httpclient_session import Session
 
-session = Session(io_loop=IOLoop.instance())
+session = Session(io_loop=IOLoop.current())
 
 
 class AsyncHTTPTestCase(tornado.testing.AsyncHTTPTestCase):
@@ -17,7 +17,7 @@ class AsyncHTTPTestCase(tornado.testing.AsyncHTTPTestCase):
         return app
 
     def get_new_ioloop(self):
-        return IOLoop.instance()
+        return IOLoop.current()
 
     def get_http_client(self):
         return session

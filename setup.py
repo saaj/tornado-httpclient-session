@@ -5,11 +5,12 @@ try:
 except ImportError:
     from distutils.core import setup
 
-VERSION = '0.1.2'
+VERSION = '0.1.3'
 
 setup(name='tornado-httpclient-session',
       version=VERSION,
-      packages=['httpclient_session', 'httpclient_session.test'],
+      packages=['httpclient_session', 'httpclient_session.test',
+                'httpclient_session.contrib'],
       author='mailto1587',
       author_email='mailto1587@gmail.com',
       description='Session support to tornado.httpclient.',

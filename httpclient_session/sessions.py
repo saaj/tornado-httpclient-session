@@ -1,7 +1,8 @@
-from cookielib import CookieJar
 from tornado.httpclient import HTTPRequest, AsyncHTTPClient
 
-from httpclient_session.mocks import MockRequest, MockResponse
+from httpclient_session.mocks import MockRequest
+from httpclient_session.cookies import extract_cookies_to_jar
+from httpclient_session.contrib.cookies import RequestsCookieJar
 
 
 class Session(object):
@@ -13,7 +14,7 @@ class Session(object):
         self._httpclient = httpclient_class(**kwargs)
         self._closed = False
 
-        self.cookies = CookieJar()
+        self.cookies = RequestsCookieJar()
 
     def __del__(self):
         self.close()
@@ -51,15 +52,9 @@ class Session(object):
     def prepare_callback(self, callback=None):
 
         def wrapper(response):
-            self.extract_cookies(response.request, response)
+            extract_cookies_to_jar(self.cookies, response.request, response)
 
             if callback:
                 return callback(response)
 
         return wrapper
-
-    def extract_cookies(self, request, response):
-        req = MockRequest(request)
-        res = MockResponse(response)
-
-        self.cookies.extract_cookies(res, req)

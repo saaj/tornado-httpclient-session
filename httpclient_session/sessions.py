@@ -24,8 +24,7 @@ class Session(object):
 
     def close(self):
         if not self._closed:
-            if not self._httpclient._closed:
-                self._httpclient.close()
+            # Dummy method since there's no resources need to release
             self._closed = True
 
     def fetch(self, request, callback=None, raise_error=True, **kwargs):

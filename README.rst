@@ -1,7 +1,10 @@
 Tornado-HttpClient-Session
 ==========================
 
-A mimic inspired by the session feature in `Requests <https://github.com/kennethreitz/requests>`_, it adds support to `Tornado <https://github.com/tornadoweb/tornado>`_ that allows you to persist context such as cookies and other parameters across requests' fetching from `tornado.httpclient <http://tornado.readthedocs.org/en/latest/httpclient.html>`_.
+A mimic inspired by the session feature in `Requests <https://github.com/kennethreitz/requests>`_, 
+it adds support to `Tornado <https://github.com/tornadoweb/tornado>`_ that allows you to persist 
+context such as cookies and other parameters across requests' fetching from 
+`tornado.httpclient <http://tornado.readthedocs.org/en/latest/httpclient.html>`_.
 
 **THIS IS SESSION ABOUT CLIENT, NOT SERVER!**
 
@@ -38,6 +41,7 @@ Development Progress
 Persistences of:
 
 * Cookies ✔
+* Referrer ✘
 * Authorization ✘
 
 Any Suggestions Welcome!

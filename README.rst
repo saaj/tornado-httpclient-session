@@ -33,7 +33,11 @@ Usage
 Testing
 -------
 
-    python -m httpclient_session.test.runtests
+    python setup.py test
+    
+Or for all supported environments:
+
+    tox
 
 Development Progress
 --------------------

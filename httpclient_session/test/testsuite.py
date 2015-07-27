@@ -1,5 +1,4 @@
-from httpclient_session.test.testcase import AsyncHTTPTestCase
-
+from httpclient_session.test import AsyncHTTPTestCase
 
 
 class CookieTestCase(AsyncHTTPTestCase):
@@ -10,3 +9,4 @@ class CookieTestCase(AsyncHTTPTestCase):
 
         response = self.fetch('/cookie')
         self.assertIn('cookie', response.request.headers)
+

@@ -22,10 +22,10 @@ Usage
    s = Session(HTTPClient) # AsyncHTTPClient default
 
    r = s.fetch('https://github.com')
-   print r.headers['set-cookie'] # Inspect cookies returnd from Github
+   print(r.headers['set-cookie']) # Inspect cookies returnd from Github
 
    r = s.fetch('https://github.com') # Fetching carrys cookies
-   print r.request.headers['cookie'] # Inspect cookies attached
+   print(r.request.headers['cookie']) # Inspect cookies attached
 
 Testing
 -------

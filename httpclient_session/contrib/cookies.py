@@ -11,10 +11,16 @@ Contributed by project `requests` (https://github.com/kennethreitz/requests)
 import copy
 import time
 import collections
-# from .compat import cookielib, urlparse, urlunparse, Morsel
-import cookielib
-from urlparse import urlparse, urlunparse
-from Cookie import Morsel
+
+try:
+    from urlparse import urlparse, urlunparse
+    import cookielib
+    from Cookie import Morsel
+except ImportError:
+    from urllib.parse import urlparse, urlunparse
+    import http.cookiejar as cookielib
+    from http.cookies import Morsel
+
 
 try:
     import threading

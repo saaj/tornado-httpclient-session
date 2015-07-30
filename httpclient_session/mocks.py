@@ -77,11 +77,5 @@ class MockResponse(object):
     
     def get_all(self, name, failobj=None):
         '''Python 3 changes, see http://bugs.python.org/issue4773'''
-        try:
-            return self.getheaders(name)
-        except KeyError:
-            if failobj:
-                return failobj
-            else:
-                raise
+        return self._response.headers.get_list(name) or failobj
 
